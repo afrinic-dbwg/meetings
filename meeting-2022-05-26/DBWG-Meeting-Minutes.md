@@ -59,55 +59,56 @@ The following are the main focus areas for MyAFRINIC v2 project:
 ### **Discussion notes**
 ###### RPKI 
 Adding support for delegated mode in our RPKI service was highly welcomed, it was also suggested by BM that we should ensure that we support the publish in parent (hybrid) mode.
-This will deliver more value to most members, it takes away the burden of managing a publication server from a member who wish to run his own CA and be in full control of his key material and object issuance.<br>
-<br>
-BM also suggested that the feature for Auto-renewal of ROAs should be reviewed because it could lead to substantial garbage in the near future if it is totally done without manual intervention.<br>
+This will deliver more value to most members, it takes away the burden of managing a publication server from a member who wish to run his own CA and be in full control of his key material and object issuance.
+
+BM also suggested that the feature for Auto-renewal of ROAs should be reviewed because it could lead to substantial garbage in the near future if it is totally done without manual intervention.
 
 It was also pointed out that support for Ghostbuster Records (GBR) RFC-6493 in our RPKI service is overdue.
-The coding team members working on RPKI system were also advised to actively participate in  SIDR Operations (sidrops).<br>
+The coding team members working on RPKI system were also advised to actively participate in  SIDR Operations (sidrops).
 
 In conclusion FH suggested that we should  prioritise publish in parent mode even if it is at the expense of dragging the project delivery time.
 
 ###### NRTM
-BM raised the issue of _**NRTM**_ version 4 draft that’s being adopted in the working group at the IETF. <br>
-YC stated that WHOIS core has not been updated for a very long time, so no new NRTM specifications has been adopted. <br>
-It was suggested that to start investigating and tracking it as the current mirroring endpoint use NRTM version 3. <br>
-<br>
-BM said that it was separately implemented at RIPE NCC, APNIC about 20 years ago and nobody bothered to write it down and it’s not fit for purpose.<br>
-He also said that it would be nice to see again it on the topic of AFRINIC participation of IETF, as Afrinic is one of the half dozen organizations in the world that really needs to implement support for it when it becomes a thing.<br><br>
+BM raised the issue of _**NRTM**_ version 4 draft that’s being adopted in the working group at the IETF. 
+YC stated that WHOIS core has not been updated for a very long time, so no new NRTM specifications has been adopted. 
+It was suggested that to start investigating and tracking it as the current mirroring endpoint use NRTM version 3. 
+
+BM said that it was separately implemented at RIPE NCC, APNIC about 20 years ago and nobody bothered to write it down and it’s not fit for purpose.
+He also said that it would be nice to see again it on the topic of AFRINIC participation of IETF, as Afrinic is one of the half dozen organizations in the world that really needs to implement support for it when it becomes a thing.
 ​
 
 
 ###### myAfrinic v2 
 ​
-On myAfrinic v2, BM asked was how we are going to deal with maintainers that have only got pgp and or X.509 authentication mechanisms and don’t have passwords. <br>
+On myAfrinic v2, BM asked was how we are going to deal with maintainers that have only got pgp and or X.509 authentication mechanisms and don’t have passwords.
 ​
-Keesun suggested  to implement it into two phases, the initial phase where access will be given to all password authentications for decrypt and the usual password way, and deal with pgp and the X.509 through the email or through the WHOIS interface because it’s a small portion of our members(less than 10 ) who are impacted by that, and in the next integration include pgp port and having them on myAfrinic.<br>
+Keesun suggested  to implement it into two phases, the initial phase where access will be given to all password authentications for decrypt and the usual password way, and deal with pgp and the X.509 through the email or through the WHOIS interface because it’s a small portion of our members(less than 10 ) who are impacted by that, and in the next integration include pgp port and having them on myAfrinic.
 
 It was also stated that members with specific requirements or specific ways that they have set up their maintainers or their objects in the past, will be dealt with on a one-on-one basis to see how to accommodate them and make it as seamless as possible.
 ​
-BM stated that moving away from password authentication without breaking the RPSLs authentication model in the process.<br>
-He also said that in the way that permissions work on myAfrinic today version 1, is kind of tightened in a certain way that admin-c and tech-c attributes in the autnum object.<br>
-So if you go and add contact in myAfrinic as a tech contact, that winds up being published in the autnum.<br>
-In the tech-c and in the same advent and it kind of overwrites whatever data was in the object previously. <br>
-BM said thant that is very unexpected and broken behavior and he find himself on a semi-regular basis to go in regularly and manually update the autnum to remove that noise. <br>
+BM stated that moving away from password authentication without breaking the RPSLs authentication model in the process.
+
+He also said that in the way that permissions work on myAfrinic today version 1, is kind of tightened in a certain way that admin-c and tech-c attributes in the autnum object.
+
+So if you go and add contact in myAfrinic as a tech contact, that winds up being published in the autnum.
+In the tech-c and in the same advent and it kind of overwrites whatever data was in the object previously. 
+BM said thant that is very unexpected and broken behavior and he find himself on a semi-regular basis to go in regularly and manually update the autnum to remove that noise.
 It would be really nice if that wasn’t the case and more generally.
 ​
 ###### WHOIS
 
-FH brought forward the idea of making the phone attribute of person object optional as it is being discussed in RIPE and asked if we should not bring that discussion in the mailing list.<br>
-BM stated that though it’s a good idea in theory, it’s not a good idea in practice, because unlike the allocations objects, person object is defined in an RFC and there is nowhere in IETF at the moment to update that in that RFC and that there are several examples where the RIPE implementation deviates from the RPSL RFCs and speaking as someone who has implemented RPSL RFCs, that looks like hell and we shouldn’t do more of that unless we do it through the standard processes<br>
-<br>
+FH brought forward the idea of making the phone attribute of person object optional as it is being discussed in RIPE and asked if we should not bring that discussion in the mailing list.
+BM stated that though it’s a good idea in theory, it’s not a good idea in practice, because unlike the allocations objects, person object is defined in an RFC and there is nowhere in IETF at the moment to update that in that RFC and that there are several examples where the RIPE implementation deviates from the RPSL RFCs and speaking as someone who has implemented RPSL RFCs, that looks like hell and we shouldn’t do more of that unless we do it through the standard processes
 
-BM mentionned that everything apart the organization object should be writable by the maintainer of the ordonnance. <br>
+
+BM mentionned that everything apart the organization object should be writable by the maintainer of the ordonnance. 
 He said that it’s not currently the case and causes operational problems. That was his feature request for the WHOIS side.
-<br>
 
 ​
-On the confirmation to be done on mnt-route and mnt-lower BM said that he didn’t realize that  mnt-lower had been deprecated and that it sounds broken to him.<br>
-<br>
+On the confirmation to be done on mnt-route and mnt-lower BM said that he didn’t realize that  mnt-lower had been deprecated and that it sounds broken to him.
+
 ​
-The are some issues made by mnt-lower and mnt-route of a fundamentally different thing that give you access to different things.<br>
+The are some issues made by mnt-lower and mnt-route of a fundamentally different thing that give you access to different things.
 ​
 BM sated that the deprecation of mnt-lower is going to cause issues and suggested that the solution could be that the org field of the autnum can only be changed by the mnt-lower of the as-block that the autnum comes from and the actual resource holder should be (made/mnt-by) the autnum itself
 ​
